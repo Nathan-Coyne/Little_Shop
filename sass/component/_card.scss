@@ -1,0 +1,45 @@
+.card{
+    backface-visibility: hidden;
+    perspective: 1000;
+    //&__front{ 
+   // position: relative;
+   // background-image: linear-gradient(to top rgb(129, 52, 113), rgb(90, 17, 45));
+   // height: 30rem;
+   // width:15rem;
+   // border-radius: 3rem;
+   // transition: transform 1s;
+   // z-index: 2;
+   // }
+    &:hover .galaxy__item-one, &:hover .galaxy__item-two, &:hover .galaxy__item-three, &:hover .galaxy__item-four {
+        transform:rotateY(-180deg);
+
+    }
+    
+    &__back{
+        position: absolute;
+        top:3.7rem;        
+        left:1.3rem;
+        background-image: linear-gradient(to top right, rgb(129, 52, 113), rgb(90, 17, 45));
+        height:15rem;
+        width:15rem;
+        border-radius: 3rem;
+        transform:rotateY(180deg);
+        backface-visibility: hidden;
+        z-index: 1;
+        transition: transform 1s;    
+        @include smallBlackShadow;
+
+        &-1{
+            left:18.8rem;
+        }
+        &-2{
+            left:36.25rem;
+        }
+        &-3{
+            left:53.8rem;
+        }
+    }
+    &:hover &__back{
+        transform:rotateY(0deg);
+    }
+}

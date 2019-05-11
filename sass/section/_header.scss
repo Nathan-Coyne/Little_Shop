@@ -1,0 +1,203 @@
+// for the header I wanted to build a grid style layout to ensure everything is place in the correct position.
+.header{
+    display:grid;
+    grid-template-rows:25vh 75vh;
+    grid-template-columns:25% 25% 25% 25%;
+    font-size:1.5rem;
+
+    &_background{
+        height: 100vh;
+        width:100vw;
+        opacity: 1; 
+        grid-column:1/ span 4;
+        grid-row:1/span 4;
+    }
+    &_character{
+        height: 60rem;
+        grid-column:4 /span 1;
+        grid-row:2;
+        z-index: 2;
+        justify-self: center;
+        align-self:center;
+        margin-right:12rem;
+        margin-bottom:10rem;
+        
+        @include re-size(tab-land){
+            height: 70rem;
+            width:auto;
+            grid-column: 2/ span 2;
+            justify-self: center;
+            align-self:center;
+        }
+        @include re-size(tab-port){
+            height: 90rem;
+        }
+    }
+}
+
+.nav{
+    z-index: 10;
+    grid-column:2 / span 2;
+    grid-row:1;
+    color:$primary-text-col;
+    cursor: pointer;    
+    & ul{
+        list-style: none;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 4rem;
+        margin-top:6rem;
+        
+        
+    }
+    & li{
+        width: 15rem;
+        display:inline-block;
+        padding-top:1rem;
+        &:hover{
+            color:$col-green-blue;
+        }
+    }
+    &__hover{
+        width:10rem;
+        position: absolute;
+        left:38%;
+        top:5%;
+        transition:transform 1s;
+        transform: scale(0) translateX(5rem) translateY(-20rem);
+        color:$primary-text-col;
+        z-index: 10;
+        ul{
+            width:10rem;
+            height:13rem;
+            display:block;
+            background-color:$col-black;
+            padding-left: 1.3rem;
+        }
+        li{
+            width:10rem;
+            &:hover{
+                color:$col-green-blue;
+            }
+
+            
+        }
+    }
+    
+    &__key_logo{
+        z-index: 20;
+        height: 12rem;
+        width: auto;
+        display:inline-block;
+        grid-column:2/ span 2;
+        grid-row:1;
+        justify-self: center;
+        align-self: center;
+        padding-top:0;
+        cursor: pointer;
+        //ensure a position is set as microsoft edge doesn't apply Z-Index without.
+        position: relative;
+        @include re-size(tab-port){
+            margin-top: -13rem;
+        }
+    }
+    &__key_logo:hover{
+        transform: rotateY(360deg);
+        transition:  all 2s;
+    }
+  
+    &__item-3{
+        height: 10rem;
+        border-radius: 50%;
+        transform: translateY(-3rem) scaleX(.7);
+        z-index: 1 !important;
+        display: inline-block;
+        background-color: $col-black;
+        box-sizing: border-box;
+        transition: box-shadow 1s;
+        
+
+        &:hover{
+            @include blueShadow;
+        }
+
+     }
+    &__item-1{
+       background-color:$nav-main-color;
+       text-align:center;
+       border-bottom-left-radius:4rem;
+       border-top-left-radius:4rem;  
+       @include navBorderBottom;
+       border-right: solid .3rem $col-black;
+       grid-column: 2;
+       &:hover{
+        @include blueShadow;
+       }
+    }
+    &__item-2{
+        background-color:$nav-main-color;
+        text-align:center; 
+        @include navBorderBottom;
+        margin-right:-3rem; 
+        &:hover{
+            @include blueShadow;
+        }
+        &:hover .nav__hover{
+            transform: scale(1);
+        }
+     }
+     &__item-4{
+        background-color:$nav-main-color;
+        text-align:center;
+        @include navBorderBottom;
+        margin-left:-3rem;
+        &:hover{ 
+            @include blueShadow;
+        }
+     }
+     &__item-5{
+        background-color:$nav-main-color;
+        text-align:center;
+        border-bottom-right-radius:40px;
+        border-top-right-radius:40px;
+        border-left: solid .3rem black; 
+        @include navBorderBottom;
+        transition: background-color 1s;
+        &:hover{
+         @include blueShadow;
+        }
+     /*   Comment code out as I didn't like the look of double borders but may be useful later
+     &::before{
+            content:"";
+            position: absolute;
+            border: solid 5px #7035A2;
+            border-bottom-right-radius:40px;
+            border-top-right-radius:40px;
+            //position of the border
+            top:-3px;
+            left:-5px;
+            right:-4px;
+            bottom:-21px;
+            visibility: hidden;
+        }
+        &::after{
+            content:"";
+            position: absolute;
+            border-bottom-right-radius:40px;
+            border-top-right-radius:40px;
+            //position of the border
+            top:-5px;
+            left:-7px;
+            right:-8px;
+            bottom:-26px;
+        }
+
+        &:hover::before {
+            visibility: visible;
+        
+        } */
+        
+     }
+}
+

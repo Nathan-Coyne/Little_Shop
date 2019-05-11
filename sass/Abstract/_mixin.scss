@@ -1,0 +1,38 @@
+
+
+@mixin bigBorder{
+    border-bottom: solid 1rem $col-black;
+}
+@mixin navBorderBottom{
+    border-bottom: solid 2rem black;
+}
+@mixin blueShadow{
+ box-shadow: 10px 10px 50px 2px $col-blue;
+}
+@mixin blackShadow{
+    box-shadow: 10px 10px 20px 10px $col-black;
+   }
+   @mixin smallBlackShadow{
+    box-shadow: 10px 10px 5px 1px $col-black;
+   }
+@mixin itemBorderRadius{
+    border-radius: 10%;
+}
+// media queries to change the website based on screen size
+@mixin re-size($breakpoint){
+    @if $breakpoint == small-mobile {
+        @media(max-width: 28.125em) { @content };    //450
+    }
+    @if $breakpoint == mobile {
+        @media(max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media(max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media(max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == desktop {
+        @media(min-width: 112.5em) { @content };    //1800
+    }
+}
