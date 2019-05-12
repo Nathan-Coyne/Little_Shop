@@ -27,11 +27,12 @@
         grid-column: 2 / span 2;
         font-size:4rem;
     }
-    
-    &__item-one,
-    &__item-two,
-    &__item-three,
-    &__item-four{
+    }
+.item{
+    &-one,
+    &-two,
+    &-three,
+    &-four{
         width:15rem; 
         height: 15rem; 
         grid-row: 1;
@@ -39,36 +40,36 @@
         backface-visibility: hidden;
         @include smallBlackShadow
     }
-    &__item-one{
+    &-one{
         grid-column: 1;
     }
-    &__item-two{
+    &-two{
         grid-column: 2;
     }
-    &__item-three{
+    &-three{
         grid-column: 3;
     }
-    &__item-four{
+    &-four{
         grid-column: 4;
     }
-    &__item-five{
+    &-five{
         width:15rem;
         grid-column: 1;
         grid-row: 3;
     }
-    &__item-six{
+    &-six{
         width:15rem;
         grid-row:3;
         grid-column: 2;
     }
-    &__item-seven{
+    &-seven{
         width:15rem;
         grid-column: 3;
         grid-row:3;
     }
-    &__item-eight{
+    &-eight{
         width:15rem;
         grid-column: 4;
         grid-row:3;
     }
-    }
+}

@@ -1,0 +1,42 @@
+ .home{
+    position: absolute;
+    width: 70rem;
+    height:50rem;
+    background-image:radial-gradient( #B1A2E0 1%, #4e3974 );
+    border-radius: 5rem;
+    display:grid;
+    grid-template-columns:50% 50%;
+    top:20%;
+    left:50%;
+    transform: translate(-50%);
+    opacity: 1;
+    transition: transform 2s, left 2s;
+    justify-items: center;
+    align-items: center;
+    z-index:4;
+    @include blackShadow;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+ 
+    &__heading{
+        color:black;
+        grid-row:1;
+        grid-column: 1 / span 2;
+        font-size:3rem;
+        margin-top:3rem;
+        align-self: start;
+    }
+    &__content{
+        font-size:2.2rem;
+        align-self:start;
+        padding:0 3rem;
+        border-right: solid 3px black;
+        text-align: center;
+    }
+    &__img{
+        width:30rem;
+        align-self:start;
+        justify-self: center;
+        border-radius: 50%;
+    }
+}

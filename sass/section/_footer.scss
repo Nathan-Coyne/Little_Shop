@@ -7,6 +7,11 @@
     background-color:rgba(0, 0, 0, 0.6);
     font-size:1.5rem;
     color:$primary-text-col;
+    animation-name: moveUp;
+    animation-duration: 3s;
+    @include re-size(tab-port){
+        top:86.5vh;
+    }
     &__key_logo{
         z-index: 5;
         height: 12rem;
@@ -51,6 +56,10 @@
         border-left: solid 1px white;
         justify-self: start;
         align-self: center;
+        @include re-size(tab-port){
+        grid-column: 3/ span 2;
+        margin-left:5rem;
+        }
 
     }
 }

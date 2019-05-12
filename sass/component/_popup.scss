@@ -1,0 +1,102 @@
+.popUp{
+  height:100vh;
+  width:100%;
+  position: absolute;
+  background-color: rgba($col-black, .4);
+  display: grid;
+  grid-template-columns: 12.5% 37.5% 37.5% 12.5%;
+  z-index:100;
+  top:0;
+  left:0;
+  transform: scale(0);
+  transition: transform 1s;
+  &-1,
+  &-2,
+  &-3,
+  &-4{
+    &__content{
+        width: 100%;
+        height: 50rem;
+        background-color:#553196;
+        border-radius:50px;
+        @include blackShadow;
+        grid-column: 2/ span 2;
+        grid-row: 1;
+        justify-self: center;
+        align-self: center;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows:20% 50%;
+            &-heading{
+            font-size:2rem;
+            position: relative;
+            grid-column: 2;
+            padding-top:4rem;
+            justify-self: center;
+            grid-row:1;
+            @include re-size(tab-port){
+                grid-column: 1/ span 2;
+                grid-row:1;
+            }
+        }
+        &-info{
+            font-size:2rem;
+            position: relative;
+            grid-column: 2;
+            justify-self:start;
+            align-self: start;
+            margin-left:4rem;
+            margin-right:4rem;
+            grid-row:2
+        }
+        &-image{
+            grid-row:1/span 3;
+            justify-self:center;
+            align-self: center;
+            height:90%;
+            border-radius: 2rem;
+            columns:1;
+            @include re-size(tab-port){
+                height:25rem;
+                margin-left:5rem;
+                grid-row:2/span 2;
+                align-self:start;
+            }
+        }
+    } 
+}
+}
+.remove-popUp{
+    position: absolute;
+    width:8rem;
+    height: 8rem;
+    border-radius: 50%;
+    top:3rem;
+    right:3rem;
+    background-color:#fff;
+    &,
+    &::before,
+    &::after{
+        display: inline-block;
+        color:$nav-main-color;
+    }
+    &::before,
+    &::after{
+        content: "";
+        position: absolute; 
+        top:3.7rem;
+        left:1.5rem;
+        width:5rem;
+        height:3px;
+        border-top:black 5px solid;
+    }
+    &::after{
+        transform: rotate(45deg);
+    }
+    &::before{
+        transform: rotate(-45deg);
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}

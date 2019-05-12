@@ -1,6 +1,7 @@
 //Variables and Mixin must come first as code is read top to bottom.
 @import "abstract/mixin.scss";
 @import "abstract/variables.scss";
+@import"_animation.scss";
 
 @import "base.scss";
 @import "section/header.scss";
@@ -10,5 +11,9 @@
 //@import "pages/metal-wing";
 @import "pages/pages";
 @import "pages/crystal.scss";
+@import "pages/home.scss";
+@import "pages/faq.scss";
+@import "pages/about-me.scss";
 
 @import "component/card.scss";
+@import "component/popup.scss";
