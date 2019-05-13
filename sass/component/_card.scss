@@ -11,7 +11,7 @@
    // transition: transform 1s;
    // z-index: 2;
    // }
-    &:hover .item-one, &:hover .item-two, &:hover .item-three, &:hover .item-four {
+    &:hover .item-one, &:hover .item-two, &:hover .item-three, &:hover .item-four, &:hover .item-five, &:hover .item-six, &:hover .item-seven, &:hover .item-eight, &:hover .item-nine, &:hover .item-ten {
         transform:rotateY(180deg);
 
     }
@@ -30,18 +30,27 @@
         z-index: 1;
         transition: transform 1s;    
         @include smallBlackShadow;
-        &-1{
+        &-1, &-5{
             left:1.3rem;
         }
-        &-2{
+        &-2, &-6{
             left:18.8rem;
         }
-        &-3{
+        &-3, &-7{
             left:36.25rem;
         }
-        &-4{
+        &-4, &-8{
             left:53.8rem;
         }
+        &-9{
+            left:53.8rem;
+            top: 31rem;
+        }
+        &-10{
+            left:1.3rem;
+            top: 31rem;
+        }
+
     }
     &:hover &__back{
         transform:rotateY(0deg);

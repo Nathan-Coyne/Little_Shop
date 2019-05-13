@@ -24,49 +24,4 @@
     font-size:4rem;
 }
 
-&__item-one,
-&__item-two,
-&__item-three,
-&__item-four{
-    width:15rem; 
-    height: 15rem; 
-    grid-row: 1;
-    transition: transform 1s;
-    backface-visibility: hidden;
-    @include smallBlackShadow
 }
-&__item-one{
-    grid-column: 1;
-}
-&__item-two{
-    grid-column: 2;
-}
-&__item-three{
-    grid-column: 3;
-}
-&__item-four{
-    grid-column: 4;
-}
-&__item-five{
-    width:15rem;
-    grid-column: 1;
-    grid-row: 3;
-}
-&__item-six{
-    width:15rem;
-    grid-row:3;
-    grid-column: 2;
-}
-&__item-seven{
-    width:15rem;
-    grid-column: 3;
-    grid-row:3;
-}
-&__item-eight{
-    width:15rem;
-    grid-column: 4;
-    grid-row:3;
-}
-}
-
-

@@ -24,7 +24,7 @@ window.onload = function() {
     //store a number to detect what page need to be moved into focus
     var currentPage = 0;
 
-    //popUp buttons
+    //popUp buttons galaxy Page
     var itemOne = document.querySelector(".item-one");
     var itemOneBack = document.querySelector(".card__back-1");
     var itemTwo = document.querySelector(".item-two");
@@ -33,15 +33,36 @@ window.onload = function() {
     var itemThreeBack = document.querySelector(".card__back-3");
     var itemFour = document.querySelector(".item-four");
     var itemFourBack = document.querySelector(".card__back-4");
+    //popUp buttons crystal Page
+    var itemFive = document.querySelector(".item-five");
+    var itemFiveBack = document.querySelector(".card__back-5");
+    var itemSix = document.querySelector(".item-six");
+    var itemSixBack = document.querySelector(".card__back-6");
+    var itemSeven = document.querySelector(".item-seven");
+    var itemSevenBack = document.querySelector(".card__back-7");
+    var itemEight = document.querySelector(".item-eight");
+    var itemEightBack = document.querySelector(".card__back-8");
+    var itemNine = document.querySelector(".item-nine");
+    var itemNineBack = document.querySelector(".card__back-9");
+    var itemTen = document.querySelector(".item-ten");
+    var itemTenBack = document.querySelector(".card__back-10");
     //closes the popup
     var popUpClose = document.querySelector(".remove-popUp");
     //opens the popUp
     var popUpDOM = document.querySelector(".popUp")
     //display the correct content on the page
-    var contentOne = document.querySelector(".popUp-1__content");
-    var contentTwo = document.querySelector(".popUp-2__content");
-    var contentThree = document.querySelector(".popUp-3__content");
-    var contentFour = document.querySelector(".popUp-4__content");
+    //galaxy page
+    var contentOne = document.querySelector(".popUp-1__galaxy__content");
+    var contentTwo = document.querySelector(".popUp-2__galaxy__content");
+    var contentThree = document.querySelector(".popUp-3__galaxy__content");
+    var contentFour = document.querySelector(".popUp-4__galaxy__content");
+    //crystal page
+    var contentFive = document.querySelector(".popUp-1__crystal__content");
+    var contentSix = document.querySelector(".popUp-2__crystal__content");
+    var contentSeven = document.querySelector(".popUp-3__crystal__content");
+    var contentEight = document.querySelector(".popUp-4__crystal__content");
+    var contentNine = document.querySelector(".popUp-5__crystal__content");
+    var contentTen = document.querySelector(".popUp-6__crystal__content");
     //changes style on .nav__item-3 and applies the border
     var border = function (){
         var keyBackground = document.querySelector('.nav__item-3');
@@ -134,7 +155,6 @@ window.onload = function() {
     };
     var reset = function(){
 
-        console.log(previousPage && currentPage);
         if (currentPage < 2 || currentPage > 2 ) {
             crystalButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0; transition:none;');   
          } 
@@ -161,9 +181,7 @@ window.onload = function() {
         if (currentPage > 0) {
             homeButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
-        }  
-        console.log("previous image = " + previousPage );
-        console.log("current image = " + currentPage );       
+        }       
     }
     //When calling the function when you pass you variables 
     //through the function make sure the first you pass is the one you want to apply the button
@@ -176,16 +194,29 @@ window.onload = function() {
         navRemove6.classList.remove("selected");
         navAdd.classList.add("selected");
     };
-    var popUp = function (item, placeholderOne, placeholderTwo, placeholderThree, placeholderFour){
-        if (currentPage == 1 && item == itemOne){
-            popUpDOM.style.cssText +=("transform:scale(1);opacity:1;");
+    var popUp = function ( placeholderOne, placeholderTwo, placeholderThree, placeholderFour, placeholderFive, placeholderSix){
+         popUpDOM.style.cssText +=("transform:scale(1);opacity:1;");
+
+          
+        if(currentPage == 1){   
+            placeholderOne.style.display ="grid";
+            placeholderTwo.style.display ="none";
+            placeholderThree.style.display ="none";
+            placeholderFour.style.display ="none";
+
         }
-        if(currentPage == 1)
-        placeholderOne.style.display ="grid";
-        placeholderTwo.style.display ="none";
-        placeholderThree.style.display ="none";
-        placeholderFour.style.display ="none";
-    };
+        if(currentPage == 2){  
+            placeholderOne.style.display ="grid";
+            placeholderTwo.style.display ="none";
+            placeholderThree.style.display ="none";
+            placeholderFour.style.display ="none";
+            placeholderFive.style.display ="none";
+            placeholderSix.style.display ="none";
+        }
+        
+        console.log(currentPage);
+             
+    }
 
     // adds an event to each of my buttons and then calls my functions to do there magic
     galaxyNav.addEventListener('click', function(){
@@ -229,30 +260,82 @@ window.onload = function() {
         setTimeout(reset, 1300);
     });
     itemOne.addEventListener('click', function(){
-        popUp(itemOne, contentOne, contentTwo, contentThree, contentFour);
+        popUp( contentOne, contentTwo, contentThree, contentFour);
     });
     itemOneBack.addEventListener('click', function(){
-        popUp(itemOne, contentOne, contentTwo, contentThree, contentFour);
+        popUp( contentOne, contentTwo, contentThree, contentFour);
     });
     itemTwo.addEventListener('click', function(){
-        popUp(itemOne, contentTwo, contentOne, contentThree, contentFour);
+        popUp( contentTwo, contentOne, contentThree, contentFour);
     });
     itemTwoBack.addEventListener('click', function(){
-        popUp(itemOne, contentTwo, contentOne, contentThree, contentFour);
+        popUp( contentTwo, contentOne, contentThree, contentFour);
     });
     itemThree.addEventListener('click', function(){
-        popUp(itemOne, contentThree, contentOne, contentTwo, contentFour);
+        popUp(contentThree, contentOne, contentTwo, contentFour);
     });
     itemThreeBack.addEventListener('click', function(){
-        popUp(itemOne, contentThree, contentOne, contentTwo, contentFour);
+        popUp(contentThree, contentOne, contentTwo, contentFour);
     });
     itemFour.addEventListener('click', function(){
-        popUp(itemOne, contentFour, contentOne, contentTwo, contentThree);
+        popUp(contentFour, contentOne, contentTwo, contentThree);
     });
     itemFourBack.addEventListener('click', function(){
-        popUp(itemOne, contentFour, contentOne, contentTwo, contentThree);
+        popUp(contentFour, contentOne, contentTwo, contentThree);
     });
+    itemFive.addEventListener('click', function(){
+        popUp(contentFive, contentSix, contentSeven, contentEight, contentNine, contentTen);
+    });
+    itemFiveBack.addEventListener('click', function(){
+        popUp(contentFive, contentSix, contentSeven, contentEight, contentNine, contentTen );
+    });
+    itemSix.addEventListener('click', function(){
+        popUp(contentSix, contentFive, contentSeven, contentEight, contentNine, contentTen );
+    });
+    itemSixBack.addEventListener('click', function(){
+        popUp(contentSix, contentFive, contentSeven, contentEight, contentNine, contentTen);
+        console.log(currentPage);
+    });
+    itemSeven.addEventListener('click', function(){
+        popUp(contentSeven, contentSix, contentFive, contentEight, contentNine, contentTen );
+    });
+    itemSevenBack.addEventListener('click', function(){
+        popUp(contentSeven, contentFive, contentSix, contentEight, contentNine, contentTen);
+        console.log(currentPage);
+    });
+    itemEight.addEventListener('click', function(){
+        popUp(contentEight, contentSeven, contentSix, contentFive,  contentNine, contentTen );
+    });
+    itemEightBack.addEventListener('click', function(){
+        popUp(contentEight, contentSeven, contentFive, contentSix,  contentNine, contentTen);
+        console.log(currentPage);
+    });
+    itemNine.addEventListener('click', function(){
+        popUp(contentNine, contentEight, contentSeven, contentSix, contentFive,   contentTen );
+    });
+    itemNineBack.addEventListener('click', function(){
+        popUp(contentNine, contentEight, contentSeven, contentFive, contentSix,   contentTen);
+        console.log(currentPage);
+    });
+    itemTen.addEventListener('click', function(){
+        popUp(contentTen, contentNine, contentEight, contentSeven, contentSix, contentFive);
+    });
+    itemTenBack.addEventListener('click', function(){
+        popUp(contentTen, contentNine, contentEight, contentSeven, contentFive, contentSix);
+        console.log(currentPage);
+    });
+   
     popUpClose.addEventListener('click', function(){
-        popUpDOM.style.cssText +=("transform:scale(0); opacity:0")
+        popUpDOM.style.cssText +=("transform:scale(0); opacity:0;")
+        contentOne.style.display ="none";
+        contentTwo.style.display ="none";
+        contentThree.style.display ="none";
+        contentFour.style.display ="none";
+        contentFive.style.display ="none";
+        contentSix.style.display ="none";
+        contentSeven.style.display ="none";
+        contentEight.style.display ="none";
+        contentNine.style.display ="none";
+        contentTen.style.display ="none";
     });
 }

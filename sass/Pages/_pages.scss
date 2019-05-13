@@ -10,7 +10,7 @@
         background-image:radial-gradient( #B1A2E0 1%, #4e3974 );
         border-radius: 5rem;
         display:grid;
-        grid-template-rows:45% 10% 45%;
+        grid-template-rows:45% 10% 1fr;
         grid-template-columns:25% 25% 25% 25%;
         top:20%;
         left:120%;
@@ -24,7 +24,7 @@
     &__heading{
         color:$col-black;
         grid-row:2;
-        grid-column: 2 / span 2;
+        grid-column: 1 / span 4;
         font-size:4rem;
     }
     }
@@ -32,7 +32,13 @@
     &-one,
     &-two,
     &-three,
-    &-four{
+    &-four,
+    &-six,
+    &-five,
+    &-eight,
+    &-seven,
+    &-nine,
+    &-ten{
         width:15rem; 
         height: 15rem; 
         grid-row: 1;
@@ -40,36 +46,29 @@
         backface-visibility: hidden;
         @include smallBlackShadow
     }
-    &-one{
+    &-one, &-five{
         grid-column: 1;
     }
-    &-two{
+    &-two, &-six{
         grid-column: 2;
     }
-    &-three{
+    &-three, &-seven{
         grid-column: 3;
     }
-    &-four{
+    &-four, &-eight{
         grid-column: 4;
     }
-    &-five{
-        width:15rem;
-        grid-column: 1;
-        grid-row: 3;
+    &-five, &-nine{
+        grid-column: 4;
     }
-    &-six{
-        width:15rem;
-        grid-row:3;
+    &-six, &-ten{
         grid-column: 2;
     }
-    &-seven{
-        width:15rem;
-        grid-column: 3;
-        grid-row:3;
-    }
-    &-eight{
-        width:15rem;
-        grid-column: 4;
-        grid-row:3;
-    }
+
+
+}
+
+.position-five{
+    grid-column: 4;
+    grid-row:3;
 }
