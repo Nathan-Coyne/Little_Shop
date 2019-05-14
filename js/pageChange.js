@@ -151,6 +151,7 @@ window.onload = function() {
             placeholderFive.style.display ="none";
             placeholderSix.style.display ="none";
             placeholderSeven.style.display ="none";
+            placeholderEight.style.display ="none";
         }
         
 
@@ -281,13 +282,13 @@ window.onload = function() {
                     popUp(page, contentOne, contentTwo, contentThree, contentFour, contentSix, contentFive);
                 }
                 if (currentButton.matches(".card__back-2")){
-                    popUp(page, contentOne, contentTwo, contentThree, contentFour, contentSix, contentFive);
+                    popUp(page, contentTwo, contentOne,  contentThree, contentFour, contentSix, contentFive);
                 }
                 if (currentButton.matches(".card__back-3")){
-                    popUp(page, contentTwo, contentOne, contentThree, contentFour, contentSix, contentFive);
+                    popUp(page, contentThree, contentTwo, contentOne,  contentFour, contentSix, contentFive);
                 }
                 if (currentButton.matches(".card__back-4")){
-                    popUp(page, contentThree, contentOne, contentTwo, contentFour, contentSix, contentFive);
+                    popUp(page, contentFour, contentThree, contentOne, contentTwo,  contentSix, contentFive);
                 }
                 if (currentButton.matches(".card__back-5")){
                     popUp(page, contentFive, contentSix, contentOne, contentTwo, contentThree, contentFour);   
