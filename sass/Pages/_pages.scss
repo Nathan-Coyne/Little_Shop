@@ -36,9 +36,7 @@
     &-six,
     &-five,
     &-eight,
-    &-seven,
-    &-nine,
-    &-ten{
+    &-seven{
         width:15rem; 
         height: 15rem; 
         grid-row: 1;
@@ -46,29 +44,19 @@
         backface-visibility: hidden;
         @include smallBlackShadow
     }
-    &-one, &-five{
+    &-one{
         grid-column: 1;
     }
     &-two, &-six{
         grid-column: 2;
     }
-    &-three, &-seven{
+    &-three{
         grid-column: 3;
     }
-    &-four, &-eight{
+    &-four{
         grid-column: 4;
     }
-    &-five, &-nine{
-        grid-column: 4;
-    }
-    &-six, &-ten{
-        grid-column: 2;
-    }
+   
 
 
-}
-
-.position-five{
-    grid-column: 4;
-    grid-row:3;
 }

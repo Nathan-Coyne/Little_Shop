@@ -326,7 +326,7 @@ body {
   grid-column: 1 / span 4;
   font-size: 4rem; }
 
-.item-one, .item-two, .item-three, .item-four, .item-six, .item-five, .item-eight, .item-seven, .item-nine, .item-ten {
+.item-one, .item-two, .item-three, .item-four, .item-six, .item-five, .item-eight, .item-seven {
   width: 15rem;
   height: 15rem;
   grid-row: 1;
@@ -334,27 +334,17 @@ body {
   backface-visibility: hidden;
   box-shadow: 10px 10px 5px 1px #000; }
 
-.item-one, .item-five {
+.item-one {
   grid-column: 1; }
 
 .item-two, .item-six {
   grid-column: 2; }
 
-.item-three, .item-seven {
+.item-three {
   grid-column: 3; }
 
-.item-four, .item-eight {
+.item-four {
   grid-column: 4; }
-
-.item-five, .item-nine {
-  grid-column: 4; }
-
-.item-six, .item-ten {
-  grid-column: 2; }
-
-.position-five {
-  grid-column: 4;
-  grid-row: 3; }
 
 .crystal__heading {
   text-transform: uppercase;
@@ -518,19 +508,25 @@ body {
     z-index: 1;
     transition: transform 1s;
     box-shadow: 10px 10px 5px 1px #000; }
-    .card__back-1, .card__back-5 {
+    .card__back-1 {
       left: 1.3rem; }
-    .card__back-2, .card__back-6 {
+    .card__back-2 {
       left: 18.8rem; }
-    .card__back-3, .card__back-7 {
+    .card__back-3 {
       left: 36.25rem; }
-    .card__back-4, .card__back-8 {
+    .card__back-4 {
       left: 53.8rem; }
     .card__back-5 {
-      left: 53.8rem;
+      left: 1.3rem;
       top: 31rem; }
     .card__back-6 {
-      left: 1.3rem;
+      left: 18.8rem;
+      top: 31rem; }
+    .card__back-7 {
+      left: 36.25rem;
+      top: 31rem; }
+    .card__back-8 {
+      left: 53.8rem;
       top: 31rem; }
   .card:hover .card__back {
     transform: rotateY(0deg); }
@@ -547,7 +543,7 @@ body {
   left: 0;
   transform: scale(0);
   transition: transform 1s; }
-  .popUp-1__galaxy__content, .popUp-2__galaxy__content, .popUp-3__galaxy__content, .popUp-4__galaxy__content, .popUp-5__galaxy__content, .popUp-6__galaxy__content, .popUp-7__galaxy__content, .popUp-8__galaxy__content, .popUp-9__galaxy__content, .popUp-10__galaxy__content {
+  .popUp-1__galaxy__content, .popUp-1__crystal__content, .popUp-1__metal__content, .popUp-2__galaxy__content, .popUp-2__crystal__content, .popUp-2__metal__content, .popUp-3__galaxy__content, .popUp-3__crystal__content, .popUp-3__metal__content, .popUp-4__galaxy__content, .popUp-4__crystal__content, .popUp-4__metal__content, .popUp-5__galaxy__content, .popUp-5__crystal__content, .popUp-5__metal__content, .popUp-6__galaxy__content, .popUp-6__crystal__content, .popUp-6__metal__content, .popUp-7__galaxy__content, .popUp-7__crystal__content, .popUp-7__metal__content, .popUp-8__galaxy__content, .popUp-8__crystal__content, .popUp-8__metal__content, .popUp-9__galaxy__content, .popUp-9__crystal__content, .popUp-9__metal__content, .popUp-10__galaxy__content, .popUp-10__crystal__content, .popUp-10__metal__content {
     width: 100%;
     height: 50rem;
     background-color: #553196;
@@ -560,7 +556,7 @@ body {
     display: none;
     grid-template-columns: 50% 50%;
     grid-template-rows: 20% 50%; }
-    .popUp-1__galaxy__content-heading, .popUp-2__galaxy__content-heading, .popUp-3__galaxy__content-heading, .popUp-4__galaxy__content-heading, .popUp-5__galaxy__content-heading, .popUp-6__galaxy__content-heading, .popUp-7__galaxy__content-heading, .popUp-8__galaxy__content-heading, .popUp-9__galaxy__content-heading, .popUp-10__galaxy__content-heading {
+    .popUp-1__galaxy__content-heading, .popUp-1__crystal__content-heading, .popUp-1__metal__content-heading, .popUp-2__galaxy__content-heading, .popUp-2__crystal__content-heading, .popUp-2__metal__content-heading, .popUp-3__galaxy__content-heading, .popUp-3__crystal__content-heading, .popUp-3__metal__content-heading, .popUp-4__galaxy__content-heading, .popUp-4__crystal__content-heading, .popUp-4__metal__content-heading, .popUp-5__galaxy__content-heading, .popUp-5__crystal__content-heading, .popUp-5__metal__content-heading, .popUp-6__galaxy__content-heading, .popUp-6__crystal__content-heading, .popUp-6__metal__content-heading, .popUp-7__galaxy__content-heading, .popUp-7__crystal__content-heading, .popUp-7__metal__content-heading, .popUp-8__galaxy__content-heading, .popUp-8__crystal__content-heading, .popUp-8__metal__content-heading, .popUp-9__galaxy__content-heading, .popUp-9__crystal__content-heading, .popUp-9__metal__content-heading, .popUp-10__galaxy__content-heading, .popUp-10__crystal__content-heading, .popUp-10__metal__content-heading {
       font-size: 2rem;
       position: relative;
       grid-column: 2;
@@ -568,10 +564,10 @@ body {
       justify-self: center;
       grid-row: 1; }
       @media (max-width: 56.25em) {
-        .popUp-1__galaxy__content-heading, .popUp-2__galaxy__content-heading, .popUp-3__galaxy__content-heading, .popUp-4__galaxy__content-heading, .popUp-5__galaxy__content-heading, .popUp-6__galaxy__content-heading, .popUp-7__galaxy__content-heading, .popUp-8__galaxy__content-heading, .popUp-9__galaxy__content-heading, .popUp-10__galaxy__content-heading {
+        .popUp-1__galaxy__content-heading, .popUp-1__crystal__content-heading, .popUp-1__metal__content-heading, .popUp-2__galaxy__content-heading, .popUp-2__crystal__content-heading, .popUp-2__metal__content-heading, .popUp-3__galaxy__content-heading, .popUp-3__crystal__content-heading, .popUp-3__metal__content-heading, .popUp-4__galaxy__content-heading, .popUp-4__crystal__content-heading, .popUp-4__metal__content-heading, .popUp-5__galaxy__content-heading, .popUp-5__crystal__content-heading, .popUp-5__metal__content-heading, .popUp-6__galaxy__content-heading, .popUp-6__crystal__content-heading, .popUp-6__metal__content-heading, .popUp-7__galaxy__content-heading, .popUp-7__crystal__content-heading, .popUp-7__metal__content-heading, .popUp-8__galaxy__content-heading, .popUp-8__crystal__content-heading, .popUp-8__metal__content-heading, .popUp-9__galaxy__content-heading, .popUp-9__crystal__content-heading, .popUp-9__metal__content-heading, .popUp-10__galaxy__content-heading, .popUp-10__crystal__content-heading, .popUp-10__metal__content-heading {
           grid-column: 1/ span 2;
           grid-row: 1; } }
-    .popUp-1__galaxy__content-info, .popUp-2__galaxy__content-info, .popUp-3__galaxy__content-info, .popUp-4__galaxy__content-info, .popUp-5__galaxy__content-info, .popUp-6__galaxy__content-info, .popUp-7__galaxy__content-info, .popUp-8__galaxy__content-info, .popUp-9__galaxy__content-info, .popUp-10__galaxy__content-info {
+    .popUp-1__galaxy__content-info, .popUp-1__crystal__content-info, .popUp-1__metal__content-info, .popUp-2__galaxy__content-info, .popUp-2__crystal__content-info, .popUp-2__metal__content-info, .popUp-3__galaxy__content-info, .popUp-3__crystal__content-info, .popUp-3__metal__content-info, .popUp-4__galaxy__content-info, .popUp-4__crystal__content-info, .popUp-4__metal__content-info, .popUp-5__galaxy__content-info, .popUp-5__crystal__content-info, .popUp-5__metal__content-info, .popUp-6__galaxy__content-info, .popUp-6__crystal__content-info, .popUp-6__metal__content-info, .popUp-7__galaxy__content-info, .popUp-7__crystal__content-info, .popUp-7__metal__content-info, .popUp-8__galaxy__content-info, .popUp-8__crystal__content-info, .popUp-8__metal__content-info, .popUp-9__galaxy__content-info, .popUp-9__crystal__content-info, .popUp-9__metal__content-info, .popUp-10__galaxy__content-info, .popUp-10__crystal__content-info, .popUp-10__metal__content-info {
       font-size: 2rem;
       position: relative;
       grid-column: 2;
@@ -580,7 +576,7 @@ body {
       margin-left: 4rem;
       margin-right: 4rem;
       grid-row: 2; }
-    .popUp-1__galaxy__content-image, .popUp-2__galaxy__content-image, .popUp-3__galaxy__content-image, .popUp-4__galaxy__content-image, .popUp-5__galaxy__content-image, .popUp-6__galaxy__content-image, .popUp-7__galaxy__content-image, .popUp-8__galaxy__content-image, .popUp-9__galaxy__content-image, .popUp-10__galaxy__content-image {
+    .popUp-1__galaxy__content-image, .popUp-1__crystal__content-image, .popUp-1__metal__content-image, .popUp-2__galaxy__content-image, .popUp-2__crystal__content-image, .popUp-2__metal__content-image, .popUp-3__galaxy__content-image, .popUp-3__crystal__content-image, .popUp-3__metal__content-image, .popUp-4__galaxy__content-image, .popUp-4__crystal__content-image, .popUp-4__metal__content-image, .popUp-5__galaxy__content-image, .popUp-5__crystal__content-image, .popUp-5__metal__content-image, .popUp-6__galaxy__content-image, .popUp-6__crystal__content-image, .popUp-6__metal__content-image, .popUp-7__galaxy__content-image, .popUp-7__crystal__content-image, .popUp-7__metal__content-image, .popUp-8__galaxy__content-image, .popUp-8__crystal__content-image, .popUp-8__metal__content-image, .popUp-9__galaxy__content-image, .popUp-9__crystal__content-image, .popUp-9__metal__content-image, .popUp-10__galaxy__content-image, .popUp-10__crystal__content-image, .popUp-10__metal__content-image {
       grid-row: 1/span 3;
       justify-self: center;
       align-self: center;
@@ -588,53 +584,7 @@ body {
       border-radius: 2rem;
       columns: 1; }
       @media (max-width: 56.25em) {
-        .popUp-1__galaxy__content-image, .popUp-2__galaxy__content-image, .popUp-3__galaxy__content-image, .popUp-4__galaxy__content-image, .popUp-5__galaxy__content-image, .popUp-6__galaxy__content-image, .popUp-7__galaxy__content-image, .popUp-8__galaxy__content-image, .popUp-9__galaxy__content-image, .popUp-10__galaxy__content-image {
-          height: 25rem;
-          margin-left: 5rem;
-          grid-row: 2/span 2;
-          align-self: start; } }
-  .popUp-1__crystal__content, .popUp-2__crystal__content, .popUp-3__crystal__content, .popUp-4__crystal__content, .popUp-5__crystal__content, .popUp-6__crystal__content, .popUp-7__crystal__content, .popUp-8__crystal__content, .popUp-9__crystal__content, .popUp-10__crystal__content {
-    width: 100%;
-    height: 50rem;
-    background-color: #553196;
-    border-radius: 50px;
-    box-shadow: 10px 10px 20px 10px #000;
-    grid-column: 2/ span 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-    display: none;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 20% 50%; }
-    .popUp-1__crystal__content-heading, .popUp-2__crystal__content-heading, .popUp-3__crystal__content-heading, .popUp-4__crystal__content-heading, .popUp-5__crystal__content-heading, .popUp-6__crystal__content-heading, .popUp-7__crystal__content-heading, .popUp-8__crystal__content-heading, .popUp-9__crystal__content-heading, .popUp-10__crystal__content-heading {
-      font-size: 2rem;
-      position: relative;
-      grid-column: 2;
-      padding-top: 4rem;
-      justify-self: center;
-      grid-row: 1; }
-      @media (max-width: 56.25em) {
-        .popUp-1__crystal__content-heading, .popUp-2__crystal__content-heading, .popUp-3__crystal__content-heading, .popUp-4__crystal__content-heading, .popUp-5__crystal__content-heading, .popUp-6__crystal__content-heading, .popUp-7__crystal__content-heading, .popUp-8__crystal__content-heading, .popUp-9__crystal__content-heading, .popUp-10__crystal__content-heading {
-          grid-column: 1/ span 2;
-          grid-row: 1; } }
-    .popUp-1__crystal__content-info, .popUp-2__crystal__content-info, .popUp-3__crystal__content-info, .popUp-4__crystal__content-info, .popUp-5__crystal__content-info, .popUp-6__crystal__content-info, .popUp-7__crystal__content-info, .popUp-8__crystal__content-info, .popUp-9__crystal__content-info, .popUp-10__crystal__content-info {
-      font-size: 2rem;
-      position: relative;
-      grid-column: 2;
-      justify-self: start;
-      align-self: start;
-      margin-left: 4rem;
-      margin-right: 4rem;
-      grid-row: 2; }
-    .popUp-1__crystal__content-image, .popUp-2__crystal__content-image, .popUp-3__crystal__content-image, .popUp-4__crystal__content-image, .popUp-5__crystal__content-image, .popUp-6__crystal__content-image, .popUp-7__crystal__content-image, .popUp-8__crystal__content-image, .popUp-9__crystal__content-image, .popUp-10__crystal__content-image {
-      grid-row: 1/span 3;
-      justify-self: center;
-      align-self: center;
-      height: 80%;
-      border-radius: 2rem;
-      columns: 1; }
-      @media (max-width: 56.25em) {
-        .popUp-1__crystal__content-image, .popUp-2__crystal__content-image, .popUp-3__crystal__content-image, .popUp-4__crystal__content-image, .popUp-5__crystal__content-image, .popUp-6__crystal__content-image, .popUp-7__crystal__content-image, .popUp-8__crystal__content-image, .popUp-9__crystal__content-image, .popUp-10__crystal__content-image {
+        .popUp-1__galaxy__content-image, .popUp-1__crystal__content-image, .popUp-1__metal__content-image, .popUp-2__galaxy__content-image, .popUp-2__crystal__content-image, .popUp-2__metal__content-image, .popUp-3__galaxy__content-image, .popUp-3__crystal__content-image, .popUp-3__metal__content-image, .popUp-4__galaxy__content-image, .popUp-4__crystal__content-image, .popUp-4__metal__content-image, .popUp-5__galaxy__content-image, .popUp-5__crystal__content-image, .popUp-5__metal__content-image, .popUp-6__galaxy__content-image, .popUp-6__crystal__content-image, .popUp-6__metal__content-image, .popUp-7__galaxy__content-image, .popUp-7__crystal__content-image, .popUp-7__metal__content-image, .popUp-8__galaxy__content-image, .popUp-8__crystal__content-image, .popUp-8__metal__content-image, .popUp-9__galaxy__content-image, .popUp-9__crystal__content-image, .popUp-9__metal__content-image, .popUp-10__galaxy__content-image, .popUp-10__crystal__content-image, .popUp-10__metal__content-image {
           height: 25rem;
           margin-left: 5rem;
           grid-row: 2/span 2;

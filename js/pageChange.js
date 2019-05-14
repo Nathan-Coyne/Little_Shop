@@ -30,6 +30,8 @@ window.onload = function() {
     var contentFour;
     var contentFive;
     var contentSix;
+    var contentSeven; 
+    var contentEight;
     //stores a list of the card buttons 
     var store = document.getElementsByClassName("store");
     //closes the popup
@@ -79,6 +81,10 @@ window.onload = function() {
         else if  (oldPage == 0) {
             homeButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
+        if(oldPage == page){
+            button.style.cssText +=('left:50%; transform: translateX(-50%); opacity:1; transition:transform 1s, left 1s;');    
+        }
+
     };
     var reset = function(){
 
@@ -121,7 +127,7 @@ window.onload = function() {
         navRemove6.classList.remove("selected");
         navAdd.classList.add("selected");
     };
-    var popUp = function (page, placeholderOne, placeholderTwo, placeholderThree, placeholderFour, placeholderFive, placeholderSix){
+    var popUp = function (page, placeholderOne, placeholderTwo, placeholderThree, placeholderFour, placeholderFive, placeholderSix, placeholderSeven, placeholderEight){
         popUpDOM.style.cssText +=("transform:scale(1);opacity:1;");
         if(page == 1){
         placeholderOne.style.display ="grid";
@@ -136,6 +142,15 @@ window.onload = function() {
         placeholderFour.style.display ="none";
         placeholderFive.style.display ="none";
         placeholderSix.style.display ="none";
+        }
+        else if (page == 3){
+            placeholderOne.style.display ="grid";
+            placeholderTwo.style.display ="none";
+            placeholderThree.style.display ="none";
+            placeholderFour.style.display ="none";
+            placeholderFive.style.display ="none";
+            placeholderSix.style.display ="none";
+            placeholderSeven.style.display ="none";
         }
         
 
@@ -171,7 +186,7 @@ window.onload = function() {
             setTimeout(reset, 1300);
             page = 2;
     
-                //crystal page
+            //crystal page
             contentOne = document.querySelector(".popUp-1__crystal__content");
             contentTwo = document.querySelector(".popUp-2__crystal__content");
             contentThree = document.querySelector(".popUp-3__crystal__content");
@@ -198,6 +213,16 @@ window.onload = function() {
             addSelected(metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, seaShellNav, homeNav); 
             setTimeout(reset, 1300);
             page = 3;
+
+            //metal page
+            contentOne = document.querySelector(".popUp-1__metal__content");
+            contentTwo = document.querySelector(".popUp-2__metal__content");
+            contentThree = document.querySelector(".popUp-3__metal__content");
+            contentFour = document.querySelector(".popUp-4__metal__content");
+            contentFive = document.querySelector(".popUp-5__metal__content");
+            contentSix = document.querySelector(".popUp-6__metal__content");
+            contentSeven = document.querySelector(".popUp-7__metal__content");
+
             // closes all popUps
             popUpClose.addEventListener('click', function(){
                 popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
@@ -207,6 +232,8 @@ window.onload = function() {
                 contentFour.style.display ="none";
                 contentFive.style.display ="none";
                 contentSix.style.display ="none";
+                contentSeven.style.display ="none";
+                contentEight.style.display ="none";
             }); 
         }
         else if (currentPage.matches(".nav__hover-sea-shell")){
@@ -268,6 +295,12 @@ window.onload = function() {
                 if (currentButton.matches(".card__back-6")){
                     popUp(page, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
                     }
+                if (currentButton.matches(".card__back-7")){
+                    popUp(page, contentSeven, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
+                }
+                if (currentButton.matches(".card__back-8")){
+                    popUp(page, contentEight, contentSeven, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
+                }
             });
     });
     // adds an event to each of my buttons and then calls my functions to do there magic

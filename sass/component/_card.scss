@@ -30,24 +30,32 @@
         z-index: 1;
         transition: transform 1s;    
         @include smallBlackShadow;
-        &-1, &-5{
+        &-1{
             left:1.3rem;
         }
-        &-2, &-6{
+        &-2{
             left:18.8rem;
         }
-        &-3, &-7{
+        &-3{
             left:36.25rem;
         }
-        &-4, &-8{
+        &-4{
             left:53.8rem;
         }
         &-5{
-            left:53.8rem;
+            left:1.3rem;
             top: 31rem;
         }
         &-6{
-            left:1.3rem;
+            left:18.8rem;
+            top: 31rem;
+        }
+        &-7{
+            left:36.25rem;
+            top: 31rem;
+        }
+        &-8{
+            left:53.8rem;
             top: 31rem;
         }
 
