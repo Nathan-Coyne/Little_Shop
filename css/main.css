@@ -526,10 +526,10 @@ body {
       left: 36.25rem; }
     .card__back-4, .card__back-8 {
       left: 53.8rem; }
-    .card__back-9 {
+    .card__back-5 {
       left: 53.8rem;
       top: 31rem; }
-    .card__back-10 {
+    .card__back-6 {
       left: 1.3rem;
       top: 31rem; }
   .card:hover .card__back {
@@ -557,7 +557,7 @@ body {
     grid-row: 1;
     justify-self: center;
     align-self: center;
-    display: grid;
+    display: none;
     grid-template-columns: 50% 50%;
     grid-template-rows: 20% 50%; }
     .popUp-1__galaxy__content-heading, .popUp-2__galaxy__content-heading, .popUp-3__galaxy__content-heading, .popUp-4__galaxy__content-heading, .popUp-5__galaxy__content-heading, .popUp-6__galaxy__content-heading, .popUp-7__galaxy__content-heading, .popUp-8__galaxy__content-heading, .popUp-9__galaxy__content-heading, .popUp-10__galaxy__content-heading {

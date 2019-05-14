@@ -1,5 +1,5 @@
 window.onload = function() {
-    //buttons for the different pages
+   
     var galaxyNav = document.querySelector(".nav__hover-galaxy");
     var crystalNav = document.querySelector('.nav__hover-crystal');
     var metalNav = document.querySelector('.nav__hover-metal');
@@ -19,50 +19,26 @@ window.onload = function() {
     var homeButton = document.querySelector(".home");
 
     //checks for the previous page to reset it's location
-    var previousPage = 0;
+    var page = 0;
+    var oldPage;
 
     //store a number to detect what page need to be moved into focus
-    var currentPage = 0;
 
-    //popUp buttons galaxy Page
-    var itemOne = document.querySelector(".item-one");
-    var itemOneBack = document.querySelector(".card__back-1");
-    var itemTwo = document.querySelector(".item-two");
-    var itemTwoBack = document.querySelector(".card__back-2");
-    var itemThree = document.querySelector(".item-three");
-    var itemThreeBack = document.querySelector(".card__back-3");
-    var itemFour = document.querySelector(".item-four");
-    var itemFourBack = document.querySelector(".card__back-4");
-    //popUp buttons crystal Page
-    var itemFive = document.querySelector(".item-five");
-    var itemFiveBack = document.querySelector(".card__back-5");
-    var itemSix = document.querySelector(".item-six");
-    var itemSixBack = document.querySelector(".card__back-6");
-    var itemSeven = document.querySelector(".item-seven");
-    var itemSevenBack = document.querySelector(".card__back-7");
-    var itemEight = document.querySelector(".item-eight");
-    var itemEightBack = document.querySelector(".card__back-8");
-    var itemNine = document.querySelector(".item-nine");
-    var itemNineBack = document.querySelector(".card__back-9");
-    var itemTen = document.querySelector(".item-ten");
-    var itemTenBack = document.querySelector(".card__back-10");
+    var contentOne; 
+    var contentTwo;
+    var contentThree;
+    var contentFour;
+    var contentFive;
+    var contentSix;
+    //stores a list of the card buttons 
+    var store = document.getElementsByClassName("store");
     //closes the popup
     var popUpClose = document.querySelector(".remove-popUp");
     //opens the popUp
     var popUpDOM = document.querySelector(".popUp")
     //display the correct content on the page
-    //galaxy page
-    var contentOne = document.querySelector(".popUp-1__galaxy__content");
-    var contentTwo = document.querySelector(".popUp-2__galaxy__content");
-    var contentThree = document.querySelector(".popUp-3__galaxy__content");
-    var contentFour = document.querySelector(".popUp-4__galaxy__content");
-    //crystal page
-    var contentFive = document.querySelector(".popUp-1__crystal__content");
-    var contentSix = document.querySelector(".popUp-2__crystal__content");
-    var contentSeven = document.querySelector(".popUp-3__crystal__content");
-    var contentEight = document.querySelector(".popUp-4__crystal__content");
-    var contentNine = document.querySelector(".popUp-5__crystal__content");
-    var contentTen = document.querySelector(".popUp-6__crystal__content");
+    
+
     //changes style on .nav__item-3 and applies the border
     var border = function (){
         var keyBackground = document.querySelector('.nav__item-3');
@@ -73,112 +49,63 @@ window.onload = function() {
         var keyBackground = document.querySelector('.nav__item-3');
         keyBackground.style.boxShadow = "none";
     }
+
     homeIconNav.addEventListener('mouseover', border);
     homeIconNav.addEventListener('mouseout', borderRemove);
     //changes the subject of the page by moving it to the center and moving the current page to the left
     var switchPage = function (button){ 
         //take the value of current page before anything happens so it previousPage
-        previousPage = currentPage;  
+        previousPage = currentPage; 
         button.style.cssText +=('left:50%; transform: translateX(-50%); opacity:1; transition:transform 1s, left 1s;');
 
-        if (previousPage == 1) {
+        if (oldPage == 1) {
             galaxyButton.style.cssText += ('left:-100%; transform:translate(0%);');     
         }
-        else if (previousPage == 2) {
+        else if (oldPage == 2) {
             crystalButton.style.cssText += ('left:-100%; transform:translate(0%);');    
         }
-        else if  (previousPage == 3) {
+        else if  (oldPage == 3) {
             metalButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
-        else if  (previousPage == 4) {
+        else if  (oldPage == 4) {
             seaShellButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
-        else if  (previousPage == 5) {
+        else if  (oldPage == 5) {
             aboutMeButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
-        else if  (previousPage == 6) {
+        else if  (oldPage == 6) {
             faqButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
-        else if  (previousPage == 0) {
+        else if  (oldPage == 0) {
             homeButton.style.cssText += ('left:-100%; transform:translate(0%);');
         }
-
-
-        //assigns a number so it the code know what page needs to be moved;
-        if (button == galaxyButton){
-            currentPage = 1;
-        }
-        else if (button == crystalButton){
-            currentPage = 2;
-        }
-        else if (button == metalButton){
-            currentPage = 3;
-        }
-        else if (button == seaShellButton){
-            currentPage = 4;
-        }
-        else if (button == aboutMeButton){
-            currentPage= 5
-        }
-        else if (button == faqButton){
-            currentPage = 6;
-        }
-        else{
-            currentPage = 0;
-        }
-        
-
-        //checks both values to ensure the section doesn't scroll off the screen if they press the same button twice in a row.
-        if (currentPage == 1 && previousPage == 1 ){
-            galaxyButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        
-        else if (currentPage == 2 && previousPage == 2 ){
-            crystalButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        else if (currentPage == 3 && previousPage == 3 ){
-            metalButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        else if (currentPage == 4 && previousPage == 4 ){
-            seaShellButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        else if (currentPage == 5 && previousPage == 5 ){
-            aboutMeButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        else if (currentPage == 6 && previousPage == 6 ){
-            faqButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-        else if (currentPage == 0 && previousPage == 0 ){
-            homeButton.style.cssText += ('left:50%; transform: translateX(-50%); opacity:1;');
-        }
-    
     };
     var reset = function(){
 
-        if (currentPage < 2 || currentPage > 2 ) {
+        if (page < 2 || page > 2 ) {
             crystalButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0; transition:none;');   
          } 
-        if (currentPage < 1 || currentPage > 1) {
+        if (page < 1 || page > 1) {
             galaxyButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
         }
-        if (currentPage < 3 || currentPage > 3)  {
+        if (page < 3 || page > 3)  {
             metalButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
         }
-        if (currentPage < 4 || currentPage > 4) {
+        if (page < 4 || page > 4) {
             seaShellButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
         }  
-        if (currentPage < 5 || currentPage > 5) {
+        if (page < 5 || page > 5) {
             aboutMeButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
         } 
-        if (currentPage < 6 || currentPage > 6) {
+        if (page < 6 || page > 6) {
             faqButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
-
+4
         }
-        if (currentPage > 0) {
+        if (page > 0) {
             homeButton.style.cssText += ('left:100%; transform:translate(0%); opacity:0;transition:none;');     
 
         }       
@@ -194,148 +121,161 @@ window.onload = function() {
         navRemove6.classList.remove("selected");
         navAdd.classList.add("selected");
     };
-    var popUp = function ( placeholderOne, placeholderTwo, placeholderThree, placeholderFour, placeholderFive, placeholderSix){
-         popUpDOM.style.cssText +=("transform:scale(1);opacity:1;");
-
-          
-        if(currentPage == 1){   
-            placeholderOne.style.display ="grid";
-            placeholderTwo.style.display ="none";
-            placeholderThree.style.display ="none";
-            placeholderFour.style.display ="none";
-
+    var popUp = function (page, placeholderOne, placeholderTwo, placeholderThree, placeholderFour, placeholderFive, placeholderSix){
+        popUpDOM.style.cssText +=("transform:scale(1);opacity:1;");
+        if(page == 1){
+        placeholderOne.style.display ="grid";
+        placeholderTwo.style.display ="none";
+        placeholderThree.style.display ="none";
+        placeholderFour.style.display ="none";
         }
-        if(currentPage == 2){  
-            placeholderOne.style.display ="grid";
-            placeholderTwo.style.display ="none";
-            placeholderThree.style.display ="none";
-            placeholderFour.style.display ="none";
-            placeholderFive.style.display ="none";
-            placeholderSix.style.display ="none";
+        else if (page == 2){
+        placeholderOne.style.display ="grid";
+        placeholderTwo.style.display ="none";
+        placeholderThree.style.display ="none";
+        placeholderFour.style.display ="none";
+        placeholderFive.style.display ="none";
+        placeholderSix.style.display ="none";
         }
         
-        console.log(currentPage);
+
              
     }
 
+    document.querySelector(".nav").addEventListener("click", function(){
+        oldPage = page;
+        currentPage = event.target;
+        if (currentPage.matches(".nav__hover-galaxy")){
+        switchPage(document.querySelector('.galaxy_store'));
+        addSelected(galaxyNav, aboutMeNav, faqNav, seaShellNav, metalNav, crystalNav, homeNav);
+        setTimeout(reset, 1300);
+        page = 1;
+        //galaxy page
+         contentOne = document.querySelector(".popUp-1__galaxy__content");
+         contentTwo = document.querySelector(".popUp-2__galaxy__content");
+         contentThree = document.querySelector(".popUp-3__galaxy__content");
+         contentFour = document.querySelector(".popUp-4__galaxy__content");   
+         //closes all popups
+ 
+         popUpClose.addEventListener('click', function(){
+         popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
+         contentOne.style.display ="none";
+         contentTwo.style.display ="none";
+         contentThree.style.display ="none";
+         contentFour.style.display ="none";
+         });
+        }
+        else if (currentPage.matches(".nav__hover-crystal")){
+            switchPage(crystalButton);
+            addSelected(crystalNav, galaxyNav, aboutMeNav, faqNav, seaShellNav, metalNav, homeNav); 
+            setTimeout(reset, 1300);
+            page = 2;
+    
+                //crystal page
+            contentOne = document.querySelector(".popUp-1__crystal__content");
+            contentTwo = document.querySelector(".popUp-2__crystal__content");
+            contentThree = document.querySelector(".popUp-3__crystal__content");
+            contentFour = document.querySelector(".popUp-4__crystal__content");
+            contentFive = document.querySelector(".popUp-5__crystal__content");
+            contentSix = document.querySelector(".popUp-6__crystal__content");
+    
+            
+            // closes all popUps
+            popUpClose.addEventListener('click', function(){
+                popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
+                contentOne.style.display ="none";
+                contentTwo.style.display ="none";
+                contentThree.style.display ="none";
+                contentFour.style.display ="none";
+                contentFive.style.display ="none";
+                contentSix.style.display ="none";
+            }); 
+            
+
+        }
+        else if (currentPage.matches(".nav__hover-metal")){
+            switchPage(metalButton); 
+            addSelected(metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, seaShellNav, homeNav); 
+            setTimeout(reset, 1300);
+            page = 3;
+            // closes all popUps
+            popUpClose.addEventListener('click', function(){
+                popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
+                contentOne.style.display ="none";
+                contentTwo.style.display ="none";
+                contentThree.style.display ="none";
+                contentFour.style.display ="none";
+                contentFive.style.display ="none";
+                contentSix.style.display ="none";
+            }); 
+        }
+        else if (currentPage.matches(".nav__hover-sea-shell")){
+            switchPage(seaShellButton); 
+            addSelected(seaShellNav, metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, homeNav); 
+            setTimeout(reset, 1300); 
+            page = 4;
+            // closes all popUps
+            popUpClose.addEventListener('click', function(){
+                popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
+                contentOne.style.display ="none";
+                contentTwo.style.display ="none";
+                contentThree.style.display ="none";
+                contentFour.style.display ="none";
+                contentFive.style.display ="none";
+                contentSix.style.display ="none";
+            }); 
+        }
+        else if (currentPage.matches(".nav__about-me")){
+            switchPage(aboutMeButton);
+            addSelected(aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav, faqNav, homeNav);
+            setTimeout(reset, 1300); 
+            page = 5;
+        }
+        else if (currentPage.matches(".nav__fAQ")){
+            switchPage(faqButton); 
+            addSelected(faqNav, aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav, homeNav);
+            setTimeout(reset, 1300);
+            page = 6; 
+        }
+        else if (currentPage.matches(".nav__home")){
+            switchPage(homeButton);
+            addSelected(homeNav, faqNav, aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav);  
+            setTimeout(reset, 1300);
+            console.log(homeButton);
+            page = 0;
+        }
+        console.log(oldPage);
+        console.log(page);
+            // - 1 as arrays start at 0 
+            store[page-1].addEventListener("click", function(){       
+                currentButton = event.target
+                console.log(currentButton);
+                if (currentButton.matches(".card__back-1")){
+                    popUp(page, contentOne, contentTwo, contentThree, contentFour, contentSix, contentFive);
+                }
+                if (currentButton.matches(".card__back-2")){
+                    popUp(page, contentOne, contentTwo, contentThree, contentFour, contentSix, contentFive);
+                }
+                if (currentButton.matches(".card__back-3")){
+                    popUp(page, contentTwo, contentOne, contentThree, contentFour, contentSix, contentFive);
+                }
+                if (currentButton.matches(".card__back-4")){
+                    popUp(page, contentThree, contentOne, contentTwo, contentFour, contentSix, contentFive);
+                }
+                if (currentButton.matches(".card__back-5")){
+                    popUp(page, contentFive, contentSix, contentOne, contentTwo, contentThree, contentFour);   
+                }
+                if (currentButton.matches(".card__back-6")){
+                    popUp(page, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
+                    }
+            });
+    });
     // adds an event to each of my buttons and then calls my functions to do there magic
-    galaxyNav.addEventListener('click', function(){
-       switchPage(galaxyButton);
-       addSelected(galaxyNav, aboutMeNav, faqNav, seaShellNav, metalNav, crystalNav, homeNav);
-       setTimeout(reset, 1300);  
-    });
-    crystalNav.addEventListener('click', function(){
-        switchPage(crystalButton);
-        addSelected(crystalNav, galaxyNav, aboutMeNav, faqNav, seaShellNav, metalNav, homeNav); 
-        setTimeout(reset, 1300); 
-    });
-    metalNav.addEventListener('click', function(){
-        switchPage(metalButton); 
-        addSelected(metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, seaShellNav, homeNav); 
-        setTimeout(reset, 1300);
-    });
-    seaShellNav.addEventListener('click', function(){
-        switchPage(seaShellButton); 
-        addSelected(seaShellNav, metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, homeNav); 
-        setTimeout(reset, 1300);
-    });
-    aboutMeNav.addEventListener('click', function(){
-        switchPage(aboutMeButton);
-        addSelected(aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav, faqNav, homeNav);
-        setTimeout(reset, 1300); 
-    });
-    faqNav.addEventListener('click', function(){
-        switchPage(faqButton); 
-        addSelected(faqNav, aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav, homeNav);
-        setTimeout(reset, 1300); 
-    });
-    homeNav.addEventListener('click', function(){
-        switchPage(homeButton);
-        addSelected(homeNav, faqNav, aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav);  
-        setTimeout(reset, 1300);
-    });
     homeIconNav.addEventListener('click', function(){
         switchPage(homeButton);
         addSelected(homeNav, faqNav, aboutMeNav, seaShellNav, metalNav, crystalNav, galaxyNav);  
         setTimeout(reset, 1300);
     });
-    itemOne.addEventListener('click', function(){
-        popUp( contentOne, contentTwo, contentThree, contentFour);
-    });
-    itemOneBack.addEventListener('click', function(){
-        popUp( contentOne, contentTwo, contentThree, contentFour);
-    });
-    itemTwo.addEventListener('click', function(){
-        popUp( contentTwo, contentOne, contentThree, contentFour);
-    });
-    itemTwoBack.addEventListener('click', function(){
-        popUp( contentTwo, contentOne, contentThree, contentFour);
-    });
-    itemThree.addEventListener('click', function(){
-        popUp(contentThree, contentOne, contentTwo, contentFour);
-    });
-    itemThreeBack.addEventListener('click', function(){
-        popUp(contentThree, contentOne, contentTwo, contentFour);
-    });
-    itemFour.addEventListener('click', function(){
-        popUp(contentFour, contentOne, contentTwo, contentThree);
-    });
-    itemFourBack.addEventListener('click', function(){
-        popUp(contentFour, contentOne, contentTwo, contentThree);
-    });
-    itemFive.addEventListener('click', function(){
-        popUp(contentFive, contentSix, contentSeven, contentEight, contentNine, contentTen);
-    });
-    itemFiveBack.addEventListener('click', function(){
-        popUp(contentFive, contentSix, contentSeven, contentEight, contentNine, contentTen );
-    });
-    itemSix.addEventListener('click', function(){
-        popUp(contentSix, contentFive, contentSeven, contentEight, contentNine, contentTen );
-    });
-    itemSixBack.addEventListener('click', function(){
-        popUp(contentSix, contentFive, contentSeven, contentEight, contentNine, contentTen);
-        console.log(currentPage);
-    });
-    itemSeven.addEventListener('click', function(){
-        popUp(contentSeven, contentSix, contentFive, contentEight, contentNine, contentTen );
-    });
-    itemSevenBack.addEventListener('click', function(){
-        popUp(contentSeven, contentFive, contentSix, contentEight, contentNine, contentTen);
-        console.log(currentPage);
-    });
-    itemEight.addEventListener('click', function(){
-        popUp(contentEight, contentSeven, contentSix, contentFive,  contentNine, contentTen );
-    });
-    itemEightBack.addEventListener('click', function(){
-        popUp(contentEight, contentSeven, contentFive, contentSix,  contentNine, contentTen);
-        console.log(currentPage);
-    });
-    itemNine.addEventListener('click', function(){
-        popUp(contentNine, contentEight, contentSeven, contentSix, contentFive,   contentTen );
-    });
-    itemNineBack.addEventListener('click', function(){
-        popUp(contentNine, contentEight, contentSeven, contentFive, contentSix,   contentTen);
-        console.log(currentPage);
-    });
-    itemTen.addEventListener('click', function(){
-        popUp(contentTen, contentNine, contentEight, contentSeven, contentSix, contentFive);
-    });
-    itemTenBack.addEventListener('click', function(){
-        popUp(contentTen, contentNine, contentEight, contentSeven, contentFive, contentSix);
-        console.log(currentPage);
-    });
-   
-    popUpClose.addEventListener('click', function(){
-        popUpDOM.style.cssText +=("transform:scale(0); opacity:0;")
-        contentOne.style.display ="none";
-        contentTwo.style.display ="none";
-        contentThree.style.display ="none";
-        contentFour.style.display ="none";
-        contentFive.style.display ="none";
-        contentSix.style.display ="none";
-        contentSeven.style.display ="none";
-        contentEight.style.display ="none";
-        contentNine.style.display ="none";
-        contentTen.style.display ="none";
-    });
+
+
 }
