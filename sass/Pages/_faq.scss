@@ -29,11 +29,11 @@
         font-size:3rem;
         margin-top:3rem;
         align-self: start;
-        text-align: center;
         padding:0 5rem;
+        justify-self:center; 
         &-1{
             grid-column: 1 / span 2;
-            text-align: center;
+            justify-self:start;
             padding:0 5rem;
         }
     }
@@ -41,14 +41,14 @@
     &__question{
         align-self:start;
         padding:0 2rem;
-        text-align: center;
+        justify-self:start; 
         color:black;
         grid-column: 1/ span 2;
     }
     &__answer, &__answer-1{
         align-self:start;
         padding:0 7rem;
-        text-align: center;
+        justify-self:start;
         color:black;
         grid-column: 1/ span 2;
     }

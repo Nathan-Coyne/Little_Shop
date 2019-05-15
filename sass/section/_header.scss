@@ -49,7 +49,57 @@
     color:$primary-text-col;
     cursor: pointer;
     //animation-name: moveDown;
-    //animation-duration: 1s;  
+    //animation-duration: 1s;
+    @include re-size(tab-port){
+        display:none;
+    }
+    &__open{
+        display:none;
+        @include re-size(tab-port){
+            display:inline-block;
+            position: absolute;
+            right:5rem;
+            top: 5rem;
+            height:10rem;
+            width:10rem;
+            background-color:$nav-main-color;
+            border-radius: 50%;
+            z-index: 1001;
+        }
+    }
+    &__mobile{
+        display: none;
+        position: absolute;
+        background-image:radial-gradient(#553196, black 90%);
+        
+
+        @include re-size(tab-port){
+            height: 100vh;
+            width:100vw;
+            z-index: 1000;
+            
+            
+            & li {
+                text-align: center;
+                font-size:8rem;
+                cursor: pointer;
+                list-style: none;
+                &:hover{
+                    color:#3E8288;
+                }
+             } 
+            &__hover{
+                display:none;
+                color:black;
+                & li{
+                    font-size:6rem;
+                }
+                
+            }
+        }
+         
+    }
+   
     & ul{
         list-style: none;
         display: flex;
@@ -72,16 +122,18 @@
         width:10rem;
         height:13rem;
         position: absolute;
-        left:40%;
-        top:11%;
+        left:55rem;
+        top:10rem;
         transition:transform 1s;
         transform: scaleY(0) translateX(-1rem) translateY(0rem);
         transform-origin: top;
         color:$primary-text-col;
         z-index: 10;
-        @include re-size(tab-port){
-            left:38%;    
+        @include re-size(tab-land){
+            left:45rem;
+            top:10rem;   
         }
+
         ul{
             width:10rem;
             height:13rem;
@@ -103,14 +155,10 @@
     
     &__key_logo{
         z-index: 20;
-        height: 12rem;
+        height: 15rem;
         width: auto;
-        display:inline-block;
-        grid-column:2/ span 2;
-        grid-row:1;
-        justify-self: center;
-        align-self: center;
-        padding-top:0;
+        margin-left:-2rem;
+        margin-top:-2rem;
         cursor: pointer;
         //ensure a position is set as microsoft edge doesn't apply Z-Index without.
         position: relative;
@@ -178,37 +226,6 @@
         margin-left:-3rem;
      }
 
-     /*   Comment code out as I didn't like the look of double borders but may be useful later
-     &::before{
-            content:"";
-            position: absolute;
-            border: solid 5px #7035A2;
-            border-bottom-right-radius:40px;
-            border-top-right-radius:40px;
-            //position of the border
-            top:-3px;
-            left:-5px;
-            right:-4px;
-            bottom:-21px;
-            visibility: hidden;
-        }
-        &::after{
-            content:"";
-            position: absolute;
-            border-bottom-right-radius:40px;
-            border-top-right-radius:40px;
-            //position of the border
-            top:-5px;
-            left:-7px;
-            right:-8px;
-            bottom:-26px;
-        }
-
-        &:hover::before {
-            visibility: visible;
-        
-        } */
-        
      
 }
 

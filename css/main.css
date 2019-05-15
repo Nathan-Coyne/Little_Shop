@@ -111,37 +111,44 @@ body {
   grid-column: 2 / span 2;
   grid-row: 1;
   color: #A0A0A0;
-  cursor: pointer;
-  /*   Comment code out as I didn't like the look of double borders but may be useful later
-     &::before{
-            content:"";
-            position: absolute;
-            border: solid 5px #7035A2;
-            border-bottom-right-radius:40px;
-            border-top-right-radius:40px;
-            //position of the border
-            top:-3px;
-            left:-5px;
-            right:-4px;
-            bottom:-21px;
-            visibility: hidden;
-        }
-        &::after{
-            content:"";
-            position: absolute;
-            border-bottom-right-radius:40px;
-            border-top-right-radius:40px;
-            //position of the border
-            top:-5px;
-            left:-7px;
-            right:-8px;
-            bottom:-26px;
-        }
-
-        &:hover::before {
-            visibility: visible;
-        
-        } */ }
+  cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .nav {
+      display: none; } }
+  .nav__open {
+    display: none; }
+    @media (max-width: 56.25em) {
+      .nav__open {
+        display: inline-block;
+        position: absolute;
+        right: 5rem;
+        top: 5rem;
+        height: 10rem;
+        width: 10rem;
+        background-color: #553196;
+        border-radius: 50%;
+        z-index: 1001; } }
+  .nav__mobile {
+    display: none;
+    position: absolute;
+    background-image: radial-gradient(#553196, black 90%); }
+    @media (max-width: 56.25em) {
+      .nav__mobile {
+        height: 100vh;
+        width: 100vw;
+        z-index: 1000; }
+        .nav__mobile li {
+          text-align: center;
+          font-size: 8rem;
+          cursor: pointer;
+          list-style: none; }
+          .nav__mobile li:hover {
+            color: #3E8288; }
+        .nav__mobile__hover {
+          display: none;
+          color: black; }
+          .nav__mobile__hover li {
+            font-size: 6rem; } }
   .nav ul {
     list-style: none;
     display: flex;
@@ -159,16 +166,17 @@ body {
     width: 10rem;
     height: 13rem;
     position: absolute;
-    left: 40%;
-    top: 11%;
+    left: 55rem;
+    top: 10rem;
     transition: transform 1s;
     transform: scaleY(0) translateX(-1rem) translateY(0rem);
     transform-origin: top;
     color: #A0A0A0;
     z-index: 10; }
-    @media (max-width: 56.25em) {
+    @media (max-width: 75em) {
       .nav__hover {
-        left: 38%; } }
+        left: 45rem;
+        top: 10rem; } }
     .nav__hover ul {
       width: 10rem;
       height: 13rem;
@@ -183,14 +191,10 @@ body {
         color: #3E8288; }
   .nav__key_logo {
     z-index: 20;
-    height: 12rem;
+    height: 15rem;
     width: auto;
-    display: inline-block;
-    grid-column: 2/ span 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-    padding-top: 0;
+    margin-left: -2rem;
+    margin-top: -2rem;
     cursor: pointer;
     position: relative; }
     @media (max-width: 56.25em) {
@@ -383,13 +387,12 @@ body {
     font-size: 2.2rem;
     align-self: start;
     padding: 0 3rem;
-    border-right: solid 3px black;
     text-align: center; }
   .home__img {
     width: 30rem;
     align-self: start;
     justify-self: center;
-    border-radius: 50%; }
+    border-radius: 10rem; }
 
 .FAQ {
   position: absolute;
@@ -421,22 +424,22 @@ body {
     font-size: 3rem;
     margin-top: 3rem;
     align-self: start;
-    text-align: center;
-    padding: 0 5rem; }
+    padding: 0 5rem;
+    justify-self: center; }
     .FAQ__heading-1 {
       grid-column: 1 / span 2;
-      text-align: center;
+      justify-self: start;
       padding: 0 5rem; }
   .FAQ__question {
     align-self: start;
     padding: 0 2rem;
-    text-align: center;
+    justify-self: start;
     color: black;
     grid-column: 1/ span 2; }
   .FAQ__answer, .FAQ__answer-1 {
     align-self: start;
     padding: 0 7rem;
-    text-align: center;
+    justify-self: start;
     color: black;
     grid-column: 1/ span 2; }
 
