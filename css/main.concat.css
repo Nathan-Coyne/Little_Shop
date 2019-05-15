@@ -301,7 +301,7 @@ body {
 .seashell_store {
   position: absolute;
   width: 70rem;
-  height: 45rem;
+  height: 50rem;
   background-image: radial-gradient(#B1A2E0 1%, #4e3974);
   border-radius: 5rem;
   display: grid;
