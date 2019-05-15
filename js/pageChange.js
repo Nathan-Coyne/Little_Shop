@@ -151,7 +151,15 @@ window.onload = function() {
             placeholderFive.style.display ="none";
             placeholderSix.style.display ="none";
             placeholderSeven.style.display ="none";
-            placeholderEight.style.display ="none";
+        }
+        else if (page == 4){
+            placeholderOne.style.display ="grid";
+            placeholderTwo.style.display ="none";
+            placeholderThree.style.display ="none";
+            placeholderFour.style.display ="none";
+            placeholderFive.style.display ="none";
+            placeholderSix.style.display ="none";
+            placeholderSeven.style.display ="none";
         }
         
 
@@ -234,7 +242,7 @@ window.onload = function() {
                 contentFive.style.display ="none";
                 contentSix.style.display ="none";
                 contentSeven.style.display ="none";
-                contentEight.style.display ="none";
+
             }); 
         }
         else if (currentPage.matches(".nav__hover-sea-shell")){
@@ -242,6 +250,14 @@ window.onload = function() {
             addSelected(seaShellNav, metalNav, crystalNav, galaxyNav, aboutMeNav, faqNav, homeNav); 
             setTimeout(reset, 1300); 
             page = 4;
+
+            contentOne = document.querySelector(".popUp-1__sea-shell__content");
+            contentTwo = document.querySelector(".popUp-2__sea-shell__content");
+            contentThree = document.querySelector(".popUp-3__sea-shell__content");
+            contentFour = document.querySelector(".popUp-4__sea-shell__content");
+            contentFive = document.querySelector(".popUp-5__sea-shell__content");
+            contentSix = document.querySelector(".popUp-6__sea-shell__content");
+            contentSeven = document.querySelector(".popUp-7__sea-shell__content");
             // closes all popUps
             popUpClose.addEventListener('click', function(){
                 popUpDOM.style.cssText +=("transform:scale(0); opacity:0;");
@@ -251,6 +267,7 @@ window.onload = function() {
                 contentFour.style.display ="none";
                 contentFive.style.display ="none";
                 contentSix.style.display ="none";
+                contentSeven.style.display ="none";
             }); 
         }
         else if (currentPage.matches(".nav__about-me")){
@@ -299,9 +316,7 @@ window.onload = function() {
                 if (currentButton.matches(".card__back-7")){
                     popUp(page, contentSeven, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
                 }
-                if (currentButton.matches(".card__back-8")){
-                    popUp(page, contentEight, contentSeven, contentSix, contentFive, contentOne, contentTwo, contentThree, contentFour);
-                }
+
             });
     });
     // adds an event to each of my buttons and then calls my functions to do there magic
