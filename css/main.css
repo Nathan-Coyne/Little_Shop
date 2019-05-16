@@ -127,7 +127,27 @@ body {
         width: 10rem;
         background-color: #553196;
         border-radius: 50%;
-        z-index: 1001; } }
+        z-index: 1001; }
+        .nav__open-button {
+          z-index: 1002;
+          position: relative;
+          right: -2.4rem;
+          top: 3.7rem; }
+          .nav__open-button::before, .nav__open-button::after {
+            width: 5rem;
+            height: 2px;
+            background-color: #fff;
+            display: inline-block;
+            transition: all .5s;
+            position: absolute; }
+          .nav__open-button::before, .nav__open-button::after {
+            content: "";
+            position: absolute;
+            left: 0; }
+          .nav__open-button::before {
+            top: -1rem; }
+          .nav__open-button::after {
+            top: 1rem; } }
   .nav__mobile {
     display: none;
     position: absolute;
@@ -137,18 +157,27 @@ body {
         height: 100vh;
         width: 100vw;
         z-index: 1000; }
+        .nav__mobileul {
+          margin-top: 20rem; }
         .nav__mobile li {
           text-align: center;
-          font-size: 8rem;
+          font-size: 7rem;
           cursor: pointer;
-          list-style: none; }
+          list-style: none;
+          margin-top: 3rem; }
           .nav__mobile li:hover {
             color: #3E8288; }
+          .nav__mobile li:first-child {
+            margin-top: 10rem; }
         .nav__mobile__hover {
           display: none;
           color: black; }
           .nav__mobile__hover li {
-            font-size: 6rem; } }
+            font-size: 6rem; }
+            .nav__mobile__hover li:first-child {
+              margin-top: 0rem; }
+          .nav__mobile__hoverul {
+            margin-top: 20rem; } }
   .nav ul {
     list-style: none;
     display: flex;
