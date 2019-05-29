@@ -1,0 +1,65 @@
+<!DOCTYPE 5 html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="/js/pageChanger_v2.js"></script>
+</head>
+<body>
+    
+
+    <header class="header">
+       <img src="img/background_raw.jpg" class="header_background">
+       <img src="img/stella.png" class="header_character">
+       
+        <nav class='nav'>
+        <ul>
+            <li class = "signUp__home"><a href ='/'>home </a></li>
+        </ul>   
+        </nav>
+    </header> 
+
+    <section class="signUp">
+        <h1 class="signUp__heading">Sign Up</h1>
+        <div class="signUp__content">
+            <form action="/user" method="POST">
+                <div>
+                    <label>Username:</label>
+                    <input type="text" name="username"/>
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" name="email"/>
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" name="password"/>
+                </div>
+                <div><input type="submit" value="Sign Up"/></div>
+            </form>
+      
+        </div>
+    </section> 
+
+    <footer class="footer">
+            <img src ="img/logo.png" class="footer__key_logo">  
+            <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item" class='footer__link'>Contact</li>
+                        <li class="footer__item" class='footer__link'><a href ='signup'>Sign Up</a></li>
+                        <li class="footer__item" class='footer__link'><a href ='signin'>Sign in</a></li>
+                        <li class="footer__item" class='footer__link'>Placeholder</li>
+                        <li class="footer__item" class='footer__link'>Placeholder</li>
+                     </ul>
+            </div>
+            <p class="footer__copyright">
+                    Built by <a href='#' class='footer__link'>Nathan Coyne</a> for his own enjoyment and to learn more<a href="#" class="footer__link">Advanced CSS and Sass techniques</a> Copyright &copy; by Nathan Coyne. You are 100% allowed to use this webpage for personal and commercial use but you cannot claim this as your own. You will need to replace all images as I am not the owner but I do have permission to use them. 
+            </p> 
+    </footer>
+    <script src="/../index.js"></script>
+</body>
+</html>
